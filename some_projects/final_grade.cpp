@@ -76,6 +76,7 @@ float GetScores(string display_string)
 
 int main()
 {
+    // Get individual scores
     const float kFirstAssignmentScore = GetScores("Enter first assignment score:\t");
     const float kSecondAssignmentScore = GetScores("Enter second assignment score:\t");
     const float kThirdAssignmentScore = GetScores("Enter third assignment score:\t");
@@ -84,17 +85,17 @@ int main()
     const float kFinalScore = GetScores("Enter final score:\t\t");
     const float kSectionGrade = GetScores("Enter section grade:\t\t");
 
+    // Calculate weighted scores
     const float kAssignmentScoreAvg = (kFirstAssignmentScore + kSecondAssignmentScore + kThirdAssignmentScore + kFourthAssignmentScore) / 4.0f * 0.4f;
-
     const float kMidtermScoreAvg = kMidtermScore * 0.15f;
-
     const float kFinalScoreAvg = kFinalScore * 0.35f;
-
     const float kSectionGradeAvg = kSectionGrade * 0.1f;
 
+    // Calculate final score
     const float kFinalGrade = kAssignmentScoreAvg + kMidtermScoreAvg + kFinalScoreAvg + kSectionGradeAvg;
 
-    cout << "Final Grade:\t\t\t" << kFinalGrade;
+    // Display final score
+    std::cout << "Final Grade:\t\t\t" << kFinalGrade;
 
     return 0;
 }
