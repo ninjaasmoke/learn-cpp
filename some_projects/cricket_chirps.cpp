@@ -49,6 +49,7 @@ int main()
     int chirps;
     char choice;
 
+    // a do-while loop to repeat this
     do
     {
         cout << "Enter the number of chirps per minute: ";
