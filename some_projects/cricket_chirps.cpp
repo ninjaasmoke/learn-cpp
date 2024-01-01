@@ -19,20 +19,27 @@ Comments by author:
 - start 9:06pm 01-01-2024
 - end 9:18pm 01-01-2024 (wtf? how did this take so long?)
 
+- modifications:
+    - static float
+    - added comments
+
 */
 
 #include <iostream>
 
 using namespace std;
 
-float CalculateTemperature(int n)
+float CalculateTemperature(int chirps)
 {
-    if (n < 1)
+    if (chirps < 1)
     {
         return 0;
     }
-    // n is the number of chirps
-    float temperature = (float(n) + 40) / 4;
+
+    // float temperature = (float(chirps) + 40) / 4;
+
+    // evidently this is a better way to do this
+    float temperature = static_cast<float>(chirps + 40) / 4.0f;
 
     return temperature;
 }
