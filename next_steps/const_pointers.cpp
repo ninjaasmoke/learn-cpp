@@ -21,8 +21,8 @@ int main()
     // int *const zptr = &z; // Pointer to a constant variable
     /*
     DOES NOT work!
-    occurs because you are attempting to create a constant pointer (int *const) to a constant variable (const int z).
-    In C++, you cannot assign the address of a constant variable to a non-const pointer.
+    occurs because we are attempting to create a constant pointer (int *const) to a constant variable (const int z).
+    In C++, we cannot assign the address of a constant variable to a non-const pointer.
     */
 
     const int w = 40;
