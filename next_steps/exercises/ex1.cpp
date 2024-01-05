@@ -18,7 +18,7 @@ It is also possible to write this program using for-loops to determine if a numb
 
 using namespace std;
 
-const int kValidNumbers = 4;
+const int kValidNumbers = 6;
 const unsigned long long int kUpperProcessLimit = 100000;
 
 unsigned long long int GetSquare(unsigned long long int n)
