@@ -17,34 +17,35 @@ It is also possible to write this program using for-loops to determine if a numb
 #include <chrono>
 
 using namespace std;
+using LongIntType = unsigned long long int;
 
 const int kValidNumbers = 6;
-const unsigned long long int kUpperProcessLimit = 100000;
+const LongIntType kUpperProcessLimit = 100000;
 
-unsigned long long int GetSquare(unsigned long long int n)
+LongIntType GetSquare(LongIntType n)
 {
     return (n * n);
 }
 
-unsigned long long int GetSumUpto(unsigned long long int n)
+LongIntType GetSumUpto(LongIntType n)
 {
     return (n * (n + 1) / 2);
 }
 
-void PrepareSquares(std::unordered_map<unsigned long long int, unsigned long long int> &square_map)
+void PrepareSquares(std::unordered_map<LongIntType, LongIntType> &square_map)
 {
-    for (unsigned long long int i = 1; i <= kUpperProcessLimit; i++)
+    for (LongIntType i = 1; i <= kUpperProcessLimit; i++)
     {
         square_map.insert({GetSquare(i), i});
     }
     return;
 }
 
-void PrepareSums(std::unordered_map<unsigned long long int, unsigned long long int> &sum_map)
+void PrepareSums(std::unordered_map<LongIntType, LongIntType> &sum_map)
 {
-    for (unsigned long long int i = 1; i <= kUpperProcessLimit; i++)
+    for (LongIntType i = 1; i <= kUpperProcessLimit; i++)
     {
-        unsigned long long int sum = GetSumUpto(i);
+        LongIntType sum = GetSumUpto(i);
         sum_map.insert({sum, i});
     }
 }
@@ -52,14 +53,14 @@ void PrepareSums(std::unordered_map<unsigned long long int, unsigned long long i
 int main()
 {
     auto start = std::chrono::system_clock::now();
-    std::unordered_map<unsigned long long int, unsigned long long int> square_map;
-    std::unordered_map<unsigned long long int, unsigned long long int> sum_map;
+    std::unordered_map<LongIntType, LongIntType> square_map;
+    std::unordered_map<LongIntType, LongIntType> sum_map;
 
     PrepareSquares(square_map);
     PrepareSums(sum_map);
 
     int valid_numbers = kValidNumbers;
-    unsigned long long int i = 1;
+    LongIntType i = 1;
 
     while (true)
     {
@@ -68,17 +69,17 @@ int main()
             break;
         }
 
-        unsigned long long int square = GetSquare(i);
+        LongIntType square = GetSquare(i);
 
         if (sum_map.find(square) != sum_map.end())
         {
-            cout << "\n-----------------\n";
-            cout << "Found it!" << endl;
-            cout << "Sum: " << square << endl;
-            cout << "Sum from 1 to: " << sum_map[square] << endl;
-            cout << "Square: " << square << endl;
-            cout << "Root: " << square_map[square] << endl;
-            cout << "\n-----------------\n";
+            std::cout << "\n-----------------\n";
+            std::cout << "Found it!" << std::endl;
+            std::cout << "Sum: " << square << std::endl;
+            std::cout << "Sum from 1 to: " << sum_map[square] << std::endl;
+            std::cout << "Square: " << square << std::endl;
+            std::cout << "Root: " << square_map[square] << std::endl;
+            std::cout << "\n-----------------\n";
             valid_numbers--;
         }
 
