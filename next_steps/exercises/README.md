@@ -26,27 +26,7 @@ I do not understand why they say it can take a while to find the number. I have 
 Here are the stats
 
 ```
-Execution times (seconds)
- phase parsing           :   0.49 (73%) usr   29912 kB (74%) ggc
- phase lang. deferred    :   0.05 ( 7%) usr    4636 kB (12%) ggc
- phase opt and generate  :   0.11 (16%) usr    4943 kB (12%) ggc
- |name lookup            :   0.05 ( 7%) usr    2533 kB ( 6%) ggc
- |overload resolution    :   0.07 (10%) usr    5324 kB (13%) ggc
- rebuild jump labels     :   0.02 ( 2%) usr       0 kB ( 0%) ggc
- preprocessing           :   0.06 ( 8%) usr     857 kB ( 2%) ggc
- parser (global)         :   0.08 (13%) usr   11435 kB (28%) ggc
- parser struct body      :   0.09 (14%) usr    4508 kB (11%) ggc
- parser function body    :   0.03 ( 4%) usr    1356 kB ( 3%) ggc
- parser inl. func. body  :   0.01 ( 1%) usr     695 kB ( 2%) ggc
- parser inl. meth. body  :   0.08 (12%) usr    2203 kB ( 5%) ggc
- template instantiation  :   0.19 (28%) usr   13472 kB (33%) ggc
- tree gimplify           :   0.01 ( 1%) usr     174 kB ( 0%) ggc
- expand                  :   0.02 ( 2%) usr     580 kB ( 1%) ggc
- integrated RA           :   0.03 ( 4%) usr    2263 kB ( 6%) ggc
- thread pro- & epilogue  :   0.02 ( 2%) usr     189 kB ( 0%) ggc
- final                   :   0.02 ( 2%) usr     193 kB ( 0%) ggc
- TOTAL                 :   0.67             40231 kB
-exercises> g++ -o ex1 ex1.cpp -Wall -Werror -ftime-report
+g++ -o ex1 ex1.cpp -Wall -Werror -ftime-report
 
 Execution times (seconds)
  phase setup             :   0.01 ( 1%) usr     729 kB ( 2%) ggc
