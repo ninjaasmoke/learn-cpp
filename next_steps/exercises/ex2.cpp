@@ -42,6 +42,7 @@ const float kPercentRequiredUsed = 0.65f;
 const float kPercentRequiredNew = 0.90f;
 const float kPercentOptionalUsed = 0.20f;
 const float kPercentOptionalNew = 0.40f;
+const float kProfitPercentage = 0.20f;
 
 struct BookData
 {
@@ -110,8 +111,13 @@ public:
                   << "Number of books:\t" << num_books_ << std::endl
                   << "*******************\n"
                   << "Need to order:\t\t" << need_to_order_ << std::endl
-                  << "Total cost:\t\t" << total_cost_ << std::endl
+                  << "Total cost:\t\t$" << total_cost_ << std::endl
                   << "*******************\n";
+    }
+
+    float GetCost()
+    {
+        return total_cost_;
     }
 };
 
@@ -119,6 +125,7 @@ class Books
 {
 private:
     std::unordered_map<int, const Book> list_;
+    float running_price_ = 0;
 
 public:
     void InsertBook(BookData data, int num_books)
@@ -131,6 +138,7 @@ public:
         Book new_book;
         new_book.Set(data, num_books);
         list_.insert({data.code, new_book});
+        running_price_ += new_book.GetCost();
         return;
     }
 
@@ -153,6 +161,11 @@ public:
         Book book = list_.at(code);
         book.Show();
         return;
+    }
+
+    float GetRunningCost()
+    {
+        return running_price_;
     }
 };
 
@@ -296,6 +309,9 @@ int main()
         }
         choice = InsertPositiveNumber<int>("\nEnter 1 to do another book, 0 to stop:\t");
     } while (choice != 0);
+
+    std::cout << "Total cost for all orders: $" << books.GetRunningCost() << std::endl;
+    std::cout << "Profit: $" << (books.GetRunningCost() * kProfitPercentage) << std::endl;
 
     return 0;
 }
