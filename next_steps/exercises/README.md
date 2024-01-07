@@ -7,6 +7,7 @@ A set of easy-intermediate level problems.
 - [Exercises](#exercises)
   - [Contents](#contents)
   - [1. Sum and Squares](#1-sum-and-squares)
+  - [2. Orders and books](#2-orders-and-books)
 
 ### 1. Sum and Squares
 
@@ -116,3 +117,11 @@ Root: 6930
 
 Execution time: 147 ms
 ```
+
+---
+
+### 2. Orders and books
+
+
+[ex2.cpp](ex2.cpp) is a small program that uses hash maps (unordered maps) to find the orders and books that are in the orders.
+
