@@ -9,7 +9,7 @@ int main()
 {
     Database myDB;
 
-    // Remember that AddComposer returns a reference to the new record.
+    // AddComposer returns a reference to the new record.
     Composer &comp1 = myDB.AddComposer("Ludwig van", "Beethoven", "Romantic", 1770,
                                        "Beethoven was completely deaf during the latter part of his life - he never "
                                        "heard a performance of his 9th symphony.");
