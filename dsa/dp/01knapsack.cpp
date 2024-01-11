@@ -53,7 +53,7 @@ int main()
     {
         for (int j = 0; j < size; j++)
         {
-            std::cout << T[i][j];
+            std::cout << T[i][j] << "\t";
         }
         std::cout << std::endl;
     }
