@@ -40,13 +40,14 @@ int knapsack(const int wt[], const int val[], int W, int N)
 
     for (int i = 1; i < N + 1; i++)
         for (int j = 1; j < W + 1; j++)
-            if (wt[i - 1] <= j)
+            if (wt[i - 1] <= j) // weight of the object is less than or equal the knapsack capacity
             {
                 T[i][j] = std::max((val[i - 1] + T[i - 1][j - wt[i - 1]]), T[i - 1][j]);
             }
-            else
+            else // weight of the object is more than the knapsack capacity
             {
                 T[i][j] = T[i - 1][j];
             }
+
     return T[N][W];
 }
