@@ -1,5 +1,5 @@
 // subsetSum.cpp : Nithin
-// desc : a variation of the knapsack problem. given an array and a sum, is it possible to get the sum by adding any elements of the attay?
+// desc : a variation of the knapsack problem. given an array and a sum, is it possible to get the sum by adding any elements of the array?
 
 #include <iostream>
 #include <cstring>
