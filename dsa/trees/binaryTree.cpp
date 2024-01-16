@@ -1,4 +1,4 @@
-// binaryTree.cpp : Nithin
+// binaryTree.cpp : nithin
 // desc : a simple program to impl a binary tree
 
 #include <iostream>

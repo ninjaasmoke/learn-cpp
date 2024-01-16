@@ -1,4 +1,4 @@
-// BinaryTreeNode.hpp : Nithin
+// BinaryTreeNode.hpp : nithin
 // desc : a header file that defines a Binary Tree Node
 
 /**
