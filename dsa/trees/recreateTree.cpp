@@ -1,6 +1,5 @@
 // recreateBTreeNode.cpp : Nithin
 // Desc: given the pre order and in order traversl of a tree, we generate a new binary tree
-//
 
 #include <iostream>
 #include <vector>
